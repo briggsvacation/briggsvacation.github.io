@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#timer {
+  background:url('https://github.com/briggsvacation/briggsvacation.github.io/raw/master/Master4.png') no-repeat;
+  background-size: contain;
+  position: relative;
+  height: 756px;
+  width: 1008px;
+}
+.number {
+  width: 90px;
+  height: 90px;
+  background:url('https://github.com/briggsvacation/briggsvacation.github.io/raw/master/Numbers4.png') no-repeat;
+  background-position-x: 0;
+  background-position-y: 0;
+  position: absolute;
+  top: 6.5%;
+}
+#day2 {
+  background-position-x: 0;
+  left: 37%;
+}
+#day1 {
+  background-position-x: 0;
+  left: 48.5%;
+}
+#day0 {
+  background-position-x: 0;
+  left: 60.5%;
+}
+
