@@ -26,13 +26,15 @@ function scaleImage() {
   const imgWidth = 1008
   const imgHeight = 756
   let ratio = Math.min( windowWidth / imgWidth, windowHeight / imgHeight)
-  $('#timer').css({
-    '-webkit-transform' : 'scale(' + ratio + ')',
-    '-moz-transform'    : 'scale(' + ratio + ')',
-    '-ms-transform'     : 'scale(' + ratio + ')',
-    '-o-transform'      : 'scale(' + ratio + ')',
-    'transform'         : 'scale(' + ratio + ')'
-  })
+  if (ratio < 1) {
+    $('#timer').css({
+      '-webkit-transform' : 'scale(' + ratio + ')',
+      '-moz-transform'    : 'scale(' + ratio + ')',
+      '-ms-transform'     : 'scale(' + ratio + ')',
+      '-o-transform'      : 'scale(' + ratio + ')',
+      'transform'         : 'scale(' + ratio + ')'
+    })
+  }
 }
 
 $( window ).on( "orientationchange", function( event ) {
