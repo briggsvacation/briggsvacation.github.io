@@ -1,91 +1,17 @@
-
 <!DOCTYPE html>
-<html >
-
-<head>
-  <meta charset="UTF-8">
-  <title>Disney Countdown</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-      #timer span {
-  display:inline-block;
-  width:90px;
-  height:90px;
-  background:url('https://github.com/briggsvacation/briggsvacation.github.io/raw/master/Numbers4.png');
-  background-position:0 0;
-}
-
-#timer {
-  width:1008px;
-  height:756px;
-  background:url('https://github.com/briggsvacation/briggsvacation.github.io/raw/master/Master4.png');
-  background-position:0 0;
-}
-
-#days {
-    margin-left: 376px;
-    padding-top: 52px;
-}
-
-#day2 {
-    margin-left: 0;
-}
-#day1 {
-    margin-left: 20px;
-}
-#day0 {
-    margin-left: 25px;
-}
-
-#timerz span:nth-child(even){
-  margin-right:15px;
-}
-    </style>
-</head>
-
-<body translate="no" >
-
-  <div id="timer">
-    <div id="days">
-        <span id="day2"></span>
-        <span id="day1"></span>
-        <span id="day0"></span>
+<html>
+  <head>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <title>Briggs Disney Vacation Countdown</title>
+  </head>
+  <body>
+    <div id="timer">
+      <div class="number" id="day2"></div>
+      <div class="number" id="day1"></div>
+      <div class="number" id="day0"></div>
     </div>
-</div>
-  
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-
-    <script>
-    jQuery(function($){ // DOM ready shorthand
-  // should be 9:10am
-var fut = new Date("Nov 23 2022 23:59:59 GMT-0600").getTime(),
-    obj = {}; // {d:[7,7], h:[1,9], .....}
-
-function digitSplit(i){
-    var output = [];
-    while (i) {
-        output.push(i % 10);
-        i = Math.floor(i/10);
-    }
-    return output;
-}
-
-function drawTime(){  
-    var now = new Date().getTime(),   
-        dif = now<fut ? Math.floor( (fut-now)/1000) : 0;
-    var daysUntil = Math.floor(dif/60/60/24);
-    var digits = digitSplit(daysUntil);
-
-    for(var i=0; i<3; i++){
-        $('#day'+i).css({backgroundPosition: -digits[i]*90});
-    }   
- }  
-
-drawTime(); 
-setInterval(drawTime, 1000); 
-   
-});
-  </script>
-</body>
+  </body>
 </html>
- 
