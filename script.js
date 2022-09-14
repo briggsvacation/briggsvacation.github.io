@@ -1,5 +1,5 @@
 // Set target datetime here:
-let fut = new Date("Nov 23 2022 23:59:59 GMT-0600").getTime()
+let fut = new Date("Nov 22 2022 23:59:59 GMT-0600").getTime()
 
 function digitSplit(i){
     let output = []
